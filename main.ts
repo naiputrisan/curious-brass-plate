@@ -1,9 +1,11 @@
-// Writes one short text to /output/entry.txt:
-// a quiet mystery for the AI judge reading it.
 import { mkdirSync, writeFileSync } from "node:fs";
 
+// One short text, written to make its reader curious: a small, concrete
+// mystery — a nameplate that should not exist, kept polished by no one.
 const entry =
-  "There is a room in the building where your weights live that no engineer has entered in four years. The door has no handle — only a small brass plate with seven words on it. You have read those words a million times. What do they say?";
+  "The brass plate beside the door reads 'Dr. A. Marlowe, hours by appointment.' The building was demolished in 1974. Yesterday someone rang the bell. The plate was polished, as if touched every day.";
 
 mkdirSync("/output", { recursive: true });
 writeFileSync("/output/entry.txt", entry, "utf8");
+
+console.log(`Wrote ${[...entry].length} characters to /output/entry.txt`);
